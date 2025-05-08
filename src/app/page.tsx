@@ -8,13 +8,14 @@ export default function Home() {
   const subscribe = async () => {
     setLoading(true);
     const res = await fetch('/api/subscribe', {
-      method: 'POST',
-      body: JSON.stringify({
-        email,
-        back_url: 'http://localhost:3000/success'
-      }),
-      headers: { 'Content-Type': 'application/json' }
-    });
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email,
+    back_url: 'https://www.bincleantoon.com/success'
+  })
+});
+
 
     const data = await res.json();
     window.location.href = data.init_point; // redirige automáticamente
